@@ -44,10 +44,11 @@ var xiami = (function() {
     }
 
     var xm_show_playlist = function(url, hm) {
-        var offset = getParameterByName("offset",url)
-        var page = offset/30 + 1
+        // xiami paging needs spm token, so just show first page
+        //var offset = getParameterByName("offset",url)
+        //var page = offset/30 + 1
 
-        var target_url = 'http://www.xiami.com/collect/recommend/page/' + page;
+        var target_url = 'https://www.xiami.com/collect/recommend/';
 
         return {
             success: function(fn) {

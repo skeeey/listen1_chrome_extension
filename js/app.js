@@ -1426,6 +1426,10 @@
         if ($scope.loading == true) {
             return
         }
+        // xiami paging needs spm token, so disable this
+        if ($scope.tab === 1) {
+            return
+        }
         $scope.loading = true;
         var offset = $scope.result.length;
         loWeb.get('/show_playlist?source=' + getSourceName($scope.tab) + '&offset=' + offset).success(function(data) {
